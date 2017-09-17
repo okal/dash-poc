@@ -1,0 +1,34 @@
+.slot {
+    box-sizing: border-box;
+}
+
+.content-block {
+    width: 100%;
+    margin: 10px auto;
+    text-align: left;
+    height: 100%;
+}
+
+.content-block-1 > .slot {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+
+.content-block-2 > .slot {
+    width: 50%;
+    display: inline-block;
+    height: 200px;
+    vertical-align: top;
+}
+
+.clear {
+    clear: both;
+}
+
+@media(max-width: 600px) {
+    .content-block-1 > .slot {
+        width: 100%;
+    }
+}
