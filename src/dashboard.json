@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "description": "A representation of a Jumo Portal dashboard",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "A human-friendly name for the dashboard."
+    },
+    "contentBlocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/contentBlock"
+      }
+    }
+  },
+  "required": ["contentBlocks", "title"],
+  "definitions": {
+    "contentBlock": {
+      "type": "object",
+      "required": ["layout", "visualisationContainers"],
+      "properties": {
+        "layout": {
+          "type": "string",
+          "description": "A predefined identifier for a set layout"
+        },
+        "visualisationContainers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/visualisationContainer"
+          }
+        }
+      }
+    },
+    "visualisationContainer": {
+      "type": "array",
+      "description": "A representation of a collection of visualisations only one of which is visible at a time.",
+      "items": {
+        "$ref": "#/definitions/visualisation"
+      }
+    },
+    "visualisation": {
+      "type": "object",
+      "required": ["title", "type", "config"],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "$oneOf": [
+            { "$ref": "#/definitions/highcharts/generic" },
+            { "$ref": "#/definitions/text" },
+            { "$ref": "#/definitions/highcharts/generic" }
+          ]
+        }
+      }
+    },
+    "highcharts": {
+      "generic": {
+        "type": "object",
+        "description": "A Highcharts config object in as a JSON object literal"
+      }
+    }
+  }
+}
