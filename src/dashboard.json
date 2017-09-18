@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "description": "A representation of a Jumo Portal dashboard",
+  "description": "A representation of a dashboard, which is a collection of visualisations arranged in a specific layout",
   "type": "object",
   "properties": {
     "title": {
