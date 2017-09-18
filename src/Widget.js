@@ -27,7 +27,10 @@ class Widget extends Component {
     renderVisualisation() {
         const visualisationDefinition = this.props.definition[this.state.activeVisualisationIndex];
         const VisualisationComponent = visualisationComponents[visualisationDefinition.type];
-        return <VisualisationComponent data={this.props.definition[this.state.activeVisualisationIndex]}/>;
+        const visualisationConfig = this.props.definition[this.state.activeVisualisationIndex];
+        return <VisualisationComponent
+                    config={visualisationConfig.config}
+                    title={visualisationConfig.title}/>;
     }
 
     renderSwitcher(widgetDefinition) {
@@ -37,7 +40,7 @@ class Widget extends Component {
     }
 
     render() {
-        const options = this.renderSwitcher(this.props.definition)
+        const options = this.renderSwitcher(this.props.definition);
         return (
             <div className="widget">
                 <select onChange={this.setActiveVisualisation}>

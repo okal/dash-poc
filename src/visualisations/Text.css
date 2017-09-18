@@ -1,0 +1,7 @@
+.prose {
+    padding: 10px;
+}
+
+.prose__heading {
+    font-weight: 300;
+}

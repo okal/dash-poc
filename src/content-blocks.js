@@ -8,13 +8,13 @@ class ContentBlock1 extends Component {
         return (
             <div className="content-block content-block-1">
                 <div className="slot">
-                    <Widget definition={this.props.widgetDefinitions[0]}/>
+                    <Widget definition={this.props.visualisationContainers[0]}/>
                 </div>
                 <div className="slot">
-                    <Widget definition={this.props.widgetDefinitions[1]}/>
+                    <Widget definition={this.props.visualisationContainers[1]}/>
                 </div>
                 <div className="slot">
-                    <Widget definition={this.props.widgetDefinitions[2]}/>
+                    <Widget definition={this.props.visualisationContainers[2]}/>
                 </div>
                 <span className="clear"/>
             </div>
@@ -27,10 +27,10 @@ class ContentBlock2 extends Component {
         return (
             <div className="content-block content-block-2">
                 <div className="slot">
-                    <Widget definition={this.props.widgetDefinitions[0]}/>
+                    <Widget definition={this.props.visualisationContainers[0]}/>
                 </div>
                 <div className="slot">
-                    <Widget definition={this.props.widgetDefinitions[1]}/>
+                    <Widget definition={this.props.visualisationContainers[1]}/>
                 </div>
                 <span className="clear"/>
             </div>

@@ -5,14 +5,14 @@ class Chart extends Component {
     componentDidMount() {
         chart(
             this.chartContainer,
-            this.props.data.data.chartConfig
+            this.props.config.chartConfig
         )
     }
 
     render() {
         return (
             <div ref={(chartContainer) => this.chartContainer = chartContainer}>
-                <p>Chart: {this.props.data.title}</p>
+                <p>Chart: {this.props.config.title}</p>
             </div>
         );
     }

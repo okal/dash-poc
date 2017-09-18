@@ -5,7 +5,7 @@ import './Picture.css';
 class Picture extends Component {
     render() {
         return (
-            <img src={this.props.data.data.src}/>
+            <img src={this.props.config.src}/>
         );
     }
 }
